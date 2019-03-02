@@ -3,4 +3,5 @@
 
 ![](Object%20detection%20using%20YOLO/images/index.png)
 
-* The biggest advantage of using YOLO is its superb speed 
+* The biggest advantage of using YOLO is its superb speed.
+* This is one of the best algorithms for object detection and has shown a comparatively similar performance to the R-CNN algorithms.
