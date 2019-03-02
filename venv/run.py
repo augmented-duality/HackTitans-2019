@@ -12,6 +12,7 @@ import vlc
 import click
 import time
 import pyglet as pg
+from collections import Counter
 
 dataset_path = 'dataset'
 
@@ -30,12 +31,41 @@ def dnn_example():
     model.train(x_train, y_train, x_test, y_test)
     prediction = model.evaluate(x_test, y_test)
 
-
+    print(prediction)
+    index = np.argmax(prediction , axis=1)
+    print(index)
+    print(np.amax(index))
     p = np.amax(prediction)
     print(p)
 
-    p = round(p)
-    if p == 0 :
+    mylist = index
+
+    one=0
+    two=0
+    three=0
+    zero=0
+
+    for i in mylist:
+        if i==1:
+            one=one+1
+        elif i==2:
+            two+=1
+        elif i==3:
+            three+=1
+        elif i==0:
+            zero+=1
+
+    p = np.argmax([zero,one, two,three])
+    print("maxxx = ",p)
+
+
+
+    #pp = max(k for k,v in Counter(mylist).items() if v>1)
+
+
+
+
+    if p==0 :
         music = pg.resource.media("music/befree.mp3", streaming=False)
     elif p==1:
         music = pg.resource.media("music/delicate.mp3", streaming=False)
@@ -54,8 +84,8 @@ def dnn_example():
 
     pg.app.run()
 
-    time.sleep(10)
-    pg.app.exit()
+    #time.sleep(10)
+    #pg.app.exit()
 
 
 
