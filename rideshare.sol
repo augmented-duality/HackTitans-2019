@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18 
+pragma solidity ^0.4.22 ;
 
 contract rideshare{
     
@@ -30,10 +30,10 @@ contract rideshare{
   
   OwnerStatus currentstatus;
 
-  bool Iscarready? = false;
+  bool Iscarready = false;
   
   modifier Ready {
-        require(Iscarready?);
+        require(Iscarready);
         _;
     }
     
@@ -46,8 +46,8 @@ contract rideshare{
     required details are obtained  ....*/
     
     
-    function rideshare(string dest, uint value,bytes32 plateno,string username ) public{
-        require(plateno.length>0 && value>0)   
+    constructor rideshare (string dest, uint value,bytes32 plateno,string username ) {
+        require(plateno.length>0 && value>0);   
         
         destination=dest;
         owner=msg.sender;
