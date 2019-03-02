@@ -1,7 +1,8 @@
 # HackTitans 2019 
 
 This is the impoved version for the HackTitans 2019 hackathon.
-The Product Demo can be found here [[Video link](https://github.com/augmented-duality/HackTitans-2019/blob/ht2019007/Product%20Demo.mkv)]
+The Product Demo can be found here:  
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yEMxy9cSzGA/0.jpg)](https://youtu.be/yEMxy9cSzGA)
   
 ### Motivation
 This app is a 10x better implementation of Yelp + Google Trips as none offer the product line that this
