@@ -1,5 +1,5 @@
 """
-speechemotionrecognition module
+emotion module
 Provides a library to perform speech emotion recognition on `emodb` dataset
 """
 import sys

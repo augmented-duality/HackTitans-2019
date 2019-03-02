@@ -9,7 +9,7 @@ from keras.layers import LSTM as lstm, Dense, Dropout, Conv2D, Flatten, \
 import numpy as np
 
 from . import Model
-
+import  random
 
 class DNN(Model):
     """
@@ -47,8 +47,9 @@ class DNN(Model):
 
     def train(self, x_train, y_train, x_val=None, y_val=None):
         best_acc = 0
-        epocs = len(range(10))
-        for i in range(10):
+        r = random.randint(1,50)
+        epocs = r
+        for i in range(r):
             # Shuffle the data for each epoch in unison inspired from https://stackoverflow.com/a/4602224
             print('Iterations = ', i+1, '/', epocs)
             p = np.random.permutation(len(x_train))
