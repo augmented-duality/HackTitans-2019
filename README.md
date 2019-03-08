@@ -40,3 +40,14 @@ Prediction  array [0.1621124  0.00876429 0.80469954 0.02442372]
 
 ## DataSets
 This dataset is available here [Emo-db](http://www.emodb.bilderbar.info/download/)
+
+## Tools and Technologies being used
+* Python
+  * Tensorflow
+  * Numpy
+  * Speechpy
+  * Sklearn
+* Pycharm IDE
+  
+
+
