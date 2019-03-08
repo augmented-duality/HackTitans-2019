@@ -11,7 +11,7 @@ I have considered briefly 4 *Emotion classes*
 
 ## Idea Implementation
 I have built a **Deep Neural Network** of two hidden layers. For each class, I have considered 100 training examples of recorded human voices in .wav format . The model is trained with all the class datasets . I have used __LSTM neural networks__ as input layers. The output layer is just a 4 nodes layer which gives an array of probability values of each classes . The class having max-probability value is considered as the predicted output .
-With epocs ``50`` the accuracy of ``0.83`` is observed. Based on the models output the Emotion behind the voice is captured and a song from the pre-defined lib is played to either console the person or to entertain the person.
+With epocs ``50`` the accuracy of ``0.91176`` is observed. Based on the models output the Emotion behind the voice is captured and a song from the pre-defined lib is played to either console the person or to entertain the person.
 
 A sample prediction output will be
 ```
@@ -38,3 +38,6 @@ prediction array[0.16733351 0.03139864 0.04068724 0.76058054]
 
 ```
 *This means that the model has predicted the given voice as **SAD** with ``87.86%`` accuracy*
+
+## DataSets
+This dataset is available here [Emo-db](http://www.emodb.bilderbar.info/download/)
