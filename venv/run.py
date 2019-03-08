@@ -13,6 +13,7 @@ import click
 import time
 import pyglet as pg
 from collections import Counter
+import random as rnd
 
 dataset_path = 'dataset'
 
@@ -27,11 +28,24 @@ def dnn_example():
 
 
     print('Starting LSTM')
+    print("Number of classes = ",len(class_labels))
     model = LSTM(input_shape=x_train[0].shape, num_classes=len(class_labels))
     model.train(x_train, y_train, x_test, y_test)
     prediction = model.evaluate(x_test, y_test)
 
-    print(prediction)
+    rand_index = rnd.randint(0,len(prediction))
+
+
+    print("prediction ",rand_index,prediction[rand_index])
+
+    p = np.argmax(prediction[rand_index])
+
+    print("amax value " , np.amax(prediction[rand_index]),"index ",p)
+
+
+
+    """
+    
     index = np.argmax(prediction , axis=1)
     print(index)
     print(np.amax(index))
@@ -63,7 +77,9 @@ def dnn_example():
     #pp = max(k for k,v in Counter(mylist).items() if v>1)
 
 
-
+    """
+    #plt.imshow(prediction[rand_index])
+    #plt.show()
 
     if p==0 :
         music = pg.resource.media("music/befree.mp3", streaming=False)
@@ -89,8 +105,6 @@ def dnn_example():
 
 
 
-    plt.imshow(prediction )
-    #plt.show()
     plt.imshow(x_test[0])
     #lt.show()
 

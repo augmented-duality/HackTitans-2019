@@ -47,7 +47,7 @@ class DNN(Model):
 
     def train(self, x_train, y_train, x_val=None, y_val=None):
         best_acc = 0
-        r = random.randint(1,50)
+        r = 50#random.randint(1,50)
         epocs = r
         for i in range(r):
             # Shuffle the data for each epoch in unison inspired from https://stackoverflow.com/a/4602224
@@ -81,6 +81,7 @@ class LSTM(DNN):
         super(LSTM, self).__init__(input_shape, num_classes, **params)
 
     def make_default_model(self):
+        print("LSTM Model with 128 lstm nodes")
         self.model.add(lstm(128, input_shape=(self.input_shape[0], self.input_shape[1])))
         self.model.add(Dropout(0.5))
         self.model.add(Dense(32, activation='relu'))
