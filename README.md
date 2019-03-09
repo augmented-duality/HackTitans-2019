@@ -29,7 +29,7 @@ Currently, for roof top rain water harvesting, people install water storage tank
 2. `Open Computer Vision` is a graphical image processing library known for better processing of lower to higher resolution of images. Considering the case of India, getting high resolution satellite images for different inert areas is extremely difficult and thus needs a lot of preprocessing which is much easier and faster to carry out in OpenCV.
 3. `Convolution Neural Networks` require a lot of preprocessing in case of satellite images and can become a problem if the availability of large amounts of data is not present. Though the performance increases with every forward propogation, the current architectural constraints in deploying Kubernetes clusters makes OpenCV the most viable option.
 Thus, we have opted for the OpenCV approach to accurately detect, estimate and measure the roof dimensions.
-![ALT-IMG](https://github.com/Vishal-V/SIH-RainWater-Harvesting/blob/master/fig1.png)  
+![ALT-IMG](https://github.com/Vishal-V/HackTitans-2019/blob/ht2019007/fig1.png)  
   
 - #### 2. Depth Estimation using Digital Elevation Model (DEM)
   - The tank dimensions are calculated from the rooftop catchment estimates obtained from contour mapping of the roof. The bounding boxes drawn on the roof takes the scale of the images into account and calculates the catchment area from the roof detected output
