@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Map Imagery</title>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      let lat = 0.0;
+      let lon = 0.0;
+      const do_something = (la, lo) => {
+        lat = la;
+        lon = lo;
+        
+      }
+      navigator.geolocation.getCurrentPosition(function(position) {
+         do_something(position.coords.latitude, position.coords.longitude);
+      });
+      function initMap() {
+        //var s = {{ position[756.0023193359375] }}
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 13.147448, lng: 77.608509},
+          zoom: 20,
+          mapTypeId: 'satellite'
+        });
+        map.setTilt(45);
+        var marker = new google.maps.Marker({
+          position: {lat: 13.147848, lng: 77.608909},
+          map: map,
+          title: 'Hello World!'
+        });
+    }
+      
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv9C5WnFwlmPtZWMtH6EqfMhSwJrlCcD0&callback=initMap">
+    </script>
+  </body>
+</html>
